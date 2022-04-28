@@ -10,7 +10,6 @@ export class GetUserHandler implements IQueryHandler<GetUserQuery> {
     @InjectRepository(UserEntity) private userRepo: Repository<UserEntity>,
   ) {}
   async execute(query: GetUserQuery): Promise<GetUserQuery> {
-    console.log(query);
     return this.userRepo.findOneOrFail(query.id);
   }
 }
