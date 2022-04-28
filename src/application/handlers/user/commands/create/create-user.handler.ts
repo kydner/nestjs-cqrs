@@ -1,7 +1,7 @@
 import { CreateUserCommand } from './create-user.command';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { UserEntity } from 'src/entities/user.entity';
+import { UserEntity } from 'src/domain/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @CommandHandler(CreateUserCommand)
