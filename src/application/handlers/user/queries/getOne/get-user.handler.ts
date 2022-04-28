@@ -5,7 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
 @QueryHandler(GetUserQuery)
-export class GetUserQueryHandler implements IQueryHandler<GetUserQuery> {
+export class GetUserHandler implements IQueryHandler<GetUserQuery> {
   constructor(
     @InjectRepository(UserEntity) private userRepo: Repository<UserEntity>,
   ) {}

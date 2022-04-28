@@ -1,6 +1,6 @@
 import { GetUserQuery } from 'src/application/handlers/user/queries/getOne/get-user.query';
-import { GetUsersQuery } from './../../application/handlers/user/queries/getAll/get-users.query';
-import { CreateUserCommand } from './../../application/handlers/user/commands/create/create-user.command';
+import { GetUsersQuery } from '../application/handlers/user/queries/getAll/get-users.query';
+import { CreateUserCommand } from '../application/handlers/user/commands/create/create-user.command';
 import {
   Body,
   Controller,

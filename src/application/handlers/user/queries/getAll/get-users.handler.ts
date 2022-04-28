@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 import { GetUsersQuery } from './get-users.query';
 
 @QueryHandler(GetUsersQuery)
-export class GetUsersQueryHandler implements IQueryHandler {
+export class GetUsersHandler implements IQueryHandler {
   constructor(
     @InjectRepository(UserEntity) private userRepo: Repository<UserEntity>,
   ) {}
