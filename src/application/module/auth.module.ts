@@ -1,3 +1,4 @@
+import { JwtStrategy } from './../auth/jwt.strategy';
 import { LocalStrategy } from './../auth/local.strategy';
 import { UserEntity } from 'src/domain/entities/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -28,6 +29,6 @@ import { PassportModule } from '@nestjs/passport';
     }),
   ],
   controllers: [AuthController],
-  providers: [RequestTokenHandler, AuthRepository, LocalStrategy],
+  providers: [RequestTokenHandler, AuthRepository, LocalStrategy, JwtStrategy],
 })
 export class AuthModule {}

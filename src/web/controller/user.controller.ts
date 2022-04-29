@@ -1,11 +1,21 @@
+import { JwtAuthGuard } from './../../application/auth/jwt-auth.guard';
 import { GetUserQuery } from 'src/application/handlers/user/queries/getOne/get-user.query';
 import { GetUsersQuery } from '../../application/handlers/user/queries/getAll/get-users.query';
 import { CreateUserCommand } from '../../application/handlers/user/commands/create/create-user.command';
-import { Body, Controller, HttpCode, Post, Get, Param } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpCode,
+  Post,
+  Get,
+  Param,
+  UseGuards,
+} from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @ApiTags('User')
+@ApiBearerAuth()
 @Controller('user')
 export class UserController {
   constructor(
@@ -14,6 +24,7 @@ export class UserController {
   ) {}
 
   @Get()
+  @UseGuards(JwtAuthGuard)
   async getAll() {
     return await this.queryBus.execute(new GetUsersQuery());
   }

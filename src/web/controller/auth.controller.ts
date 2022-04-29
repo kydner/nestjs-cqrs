@@ -13,7 +13,7 @@ import { Controller, UseGuards, Post, Body } from '@nestjs/common';
 export class AuthController {
   constructor(private readonly queryBus: QueryBus) {}
   @UseGuards(LocalAuthGuard)
-  @Post('login')
+  @Post('requestToken')
   async login(@Body() req: RequestTokenQuery) {
     return this.queryBus.execute(req);
   }
