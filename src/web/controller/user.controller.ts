@@ -1,16 +1,7 @@
 import { GetUserQuery } from 'src/application/handlers/user/queries/getOne/get-user.query';
 import { GetUsersQuery } from '../../application/handlers/user/queries/getAll/get-users.query';
 import { CreateUserCommand } from '../../application/handlers/user/commands/create/create-user.command';
-import {
-  Body,
-  Controller,
-  HttpCode,
-  Post,
-  Get,
-  Param,
-  UsePipes,
-  ValidationPipe,
-} from '@nestjs/common';
+import { Body, Controller, HttpCode, Post, Get, Param } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
 import { ApiTags } from '@nestjs/swagger';
 
