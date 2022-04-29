@@ -20,7 +20,7 @@ import { UserModule } from './application/module/user.module';
       synchronize: true,
     }),
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'views/client'),
+      rootPath: join(__dirname, '..', 'client/build'),
       exclude: ['/api*'],
     }),
   ],
