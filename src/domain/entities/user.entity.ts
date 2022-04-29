@@ -26,6 +26,7 @@ export class UserEntity {
 
   @Column({
     nullable: true,
+    default: null,
   })
   lastName: string;
 }
