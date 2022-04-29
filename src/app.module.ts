@@ -13,7 +13,7 @@ import { UserModule } from './application/module/user.module';
       password: 'Black fire 1989',
       database: 'cqrs',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      synchronize: false,
     }),
   ],
   controllers: [],

@@ -12,7 +12,9 @@ import {
   ValidationPipe,
 } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('User')
 @Controller('user')
 export class UserController {
   constructor(
@@ -32,7 +34,6 @@ export class UserController {
 
   @Post()
   @HttpCode(201)
-  @UsePipes(new ValidationPipe({ transform: true }))
   async Create(@Body() user: CreateUserCommand) {
     return await this.commandBus.execute(user);
   }
