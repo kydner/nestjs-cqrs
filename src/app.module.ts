@@ -1,4 +1,6 @@
+import { join } from 'path';
 import { AuthModule } from './application/module/auth.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './application/module/user.module';
@@ -16,6 +18,10 @@ import { UserModule } from './application/module/user.module';
       database: 'cqrs',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'views/client'),
+      exclude: ['/api*'],
     }),
   ],
   controllers: [],
